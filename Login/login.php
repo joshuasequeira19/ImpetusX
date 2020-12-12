@@ -246,7 +246,7 @@ span{
 	<div class="main1">
 		<div class="form-box1">
 					<img class="i2" src="img/MAPR.png" width=100% align="center">
-					<img class="i1" src="img/image111.png" width=100% align="center">
+					<img class="i1" src="image111.png" width=100% align="center">
 
 
 

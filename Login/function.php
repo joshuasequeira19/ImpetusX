@@ -61,9 +61,7 @@ function register(){
 
 			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
 			$_SESSION['success']  = "You are now logged in";
-			die;
-			header('location: index.php?status=success');
-			header ("Location: ../goals.php?info=noedit");				
+			header('location: index.php');				
 		}
 	}
 }
@@ -147,12 +145,12 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: home.php');		  
+				header('location: admin/home.php');		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 
-				header('location: index.php?status=success');
+				header('location: index.php');
 			}
 		}else {
 			array_push($errors, "Wrong username/password combination");

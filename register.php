@@ -1,9 +1,9 @@
-<?php include 'function.php'?>
+<?php include'function.php';?>
 <!DOCTYPE HTML>
 <html>
-
+	
 	<head>
-		<title>Login</title>
+		<title>Registration form</title>
 	</head>
 	<style>
 	*{
@@ -51,8 +51,8 @@
 	position: relative;
 	background: white;
 	padding: 6px;
-	overflow:hidden;
-	margin: 6% 10%;
+	overflow:visible;
+	margin: 100px 200px;
 	
 }
 
@@ -61,11 +61,11 @@
 .form-box1{
 	
 	width: 380px;
-	height: 503px;
-	position: relative;
+	height: 502px;
+	position: flex;
 	background: white;
 	padding: 5px;
-	margin: -39.4% 35%;
+	margin: -146px 385px;
 	background-color:#B94549;
 }
 
@@ -135,7 +135,7 @@ span{
 }
 
 .input-group{
-	top: 200px;
+	top: 140px;
 	position: absolute;
 	width: 280px;
 	transition: .5s;
@@ -160,7 +160,7 @@ span{
 	padding: 10px 30px;
 	cursor: pointer;
 	display: block;
-	margin: 50px 100px 10px;
+	margin: 20px 110px 10px;
 	background: #B94549;
 	border: 0;
 	color:White;
@@ -181,79 +181,86 @@ span{
 	border: 0;
 	outline: none;
 	border-radius: 30px;
-	background:#B94549;
-	
+	background:none;
 	
 }
-.h1{
-	font-family:times new roman;
-	font-size:30px;
+.t1{
+	font-family:Times New Roman;
 	font-weight:bold;
-	color:#B94549;
-	margin-top:50px;
-	margin-left:10px;
-}
-.f1{
-	font-family:times new roman;
-	font-size:15px;
-	margin-top:20px;
-	margin-left:140px;
-	position:absolute;
+	font-size:25px;
+	color:black;
+	margin:200px 130px;
+	
+	
 	}
-.f2{
-	font-family:times new roman;
-	font-size:15px;
-	margin-top:-2px;
-	margin-left:120px;
+	
+.i1{
+	margin:-390px 8px;
 	position:absolute;
 	}
 	
-	.i1{
-	margin:30px -370px;
-	position:relative;
-	}
-	
-	.i2{
-	margin:120px 5px;
+.i2{
+	margin:120px 3px;
 	position:flex;
 	
 	
 	}
 	
-
-
-</Style>
+	.Sign{
+	font-family:times new roman;
+	font-size:35px;
+	font-weight:bold;
+	margin:50px 50px;
+	color:#B94549;
+	text-align:left;
+	}
 	
+	.f1{
+	margin-bottom:-80px;
+	margin-left:120px;	
+	postition: absolute;
+	}
+	
+	.f2{
+	margin:10px 150px;	
+	}
+
+	</style>
 
 	<body>
+	<aside class="items" id="login">
+	<div class="main">
+	<div class="form-box">
+	<p class="Sign"> Sign-Up</p>
+	<form method="post" action="register.php" class="input-group" id="register">
 		
-		<div class="form-box">
-				<p class="h1">Login<p>
+		<p><?php echo display_error(); ?><p>
+		
+		<div>
+			
+			<input type="text" class="input-field" name="username" placeholder="User Name" value="<?php echo $username;?>">
+		
+			<input type="email" class="input-field" name="email"  placeholder="E-Mail" value="<?php echo $email;?>">
+			<input type="password" class="input-field"  placeholder="Password" name="password_1">
+		
+			<input type="passsword" class="input-field"  placeholder=" Confirm Password" name="password_2">
+	
+			<button type="submit" form="register"  class="submit-btn" name='register_btn'>Register</button>
+			<span class="f1">Already a member?</span>
+	</form>
+			<a class="f2" href="login.php">Login</a>
 
-		<form method='POST' action='login.php' class="input-group" id='login'>
-			<?php echo display_error(); ?>
-			
-			
-				<input type="text" name="username" class="input-field" placeholder="User Name" value="<?php echo $username;?>">
-				<input type="password" name="password_1" class="input-field" placeholder="Password">
-			
-			<button  class="submit-btn" type="submit" form="login" name="login_btn">Login</button>		
-			<a class="f1" href="register.php">Sign-up</a>
-			<p class="f2"> Not a member</p>
 		</div>
-		</form>
 		<aside class="items" id="login">
-	<div class="main1">
 		<div class="form-box1">
-					<img class="i2" src="img/MAPR.png" width=100% align="center">
-					<img class="i1" src="img/image111.png" width=100% align="center">
-
-
-
-			
+		<img class="i2" src="img/MAPR.png" width=100% align="center">
+		<img class="i1" src="img/image111.png" width=100% align="center">
+						
 		</div>
 	</div>
 	</aside>
+
+	</div>
 	</body>
 	
-</html>
+<html>
