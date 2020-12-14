@@ -12,7 +12,12 @@
 		<title>Home</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
@@ -34,12 +39,12 @@
 									}
 
 										?>
-		<div>
+		<!--  <div>
 			<h2>Home Page</h2>
 			
 
 		</div>
-		<div><!--content-->
+		<div><content-->
 			<?php if(isset($_SESSION['success'])): ?>
 			<div><!--error class-->
 				<h3>
@@ -52,7 +57,7 @@
 			<?php endif;?>
 		</div>
 		<!-- logged in user info-->
-		<div><!--profile info-->
+		<div>profile info
 			<img src="">
 			<div>
 				<?php if(isset($_SESSION['user'])):?>
