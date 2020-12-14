@@ -11,6 +11,7 @@
 	<head>
 		<title>Art</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="blogtype.css">
 	</head>
 	<body>
 		<style>
@@ -263,7 +264,7 @@ div.desc {
 
 		</style>
 		<div class="container1 bg1">
-			<p class="logo">Impetus-X </p>
+			<p class="logo" style="color: black">Impetus-<span style="color: red">X</span></p>
 			<ul>
 			<li><a href="profile.php?logout='1'">Logout</a></li>
 			<li><a href="profile.php">Profile</a></li>
@@ -304,7 +305,31 @@ div.desc {
 			</div>
 			<div class="column post" style="background-color:#F7C3B1;" >
 				
-				</li><!--add link to button-->
+				<?php 
+
+				$user_name = $_SESSION["user"]["user_name"];
+
+				$query = "SELECT * FROM post WHERE type='Art'";
+				$results = mysqli_query($db, $query);
+				foreach ($results as $rows) {
+				?>
+
+<div class="col-md-10 blogShort">
+                     <h1><?=$rows['title']?> - <?=$rows['user_name']?></h1>
+
+                     
+
+                     <article><p>
+                         <?=$rows['post']?>   
+                         </p></article>
+                     
+
+                 </div>
+
+				
+
+
+				<?php } ?>
 			</div>
 		</div>
 	</body>

@@ -11,6 +11,7 @@
 	<head>
 		<title>Technical</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="blogtype.css">
 	</head>
 	<body>
 		<style>
@@ -261,79 +262,9 @@ div.desc {
 		
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-.blogShort{ border-bottom:1px solid #ddd;}
-.add{background: #333; padding: 10%; height: 300px;}
-
-.nav-sidebar { 
-    width: 100%;
-    padding: 8px 0; 
-    border-right: 1px solid #ddd;
-}
-.nav-sidebar a {
-    color: #333;
-    -webkit-transition: all 0.08s linear;
-    -moz-transition: all 0.08s linear;
-    -o-transition: all 0.08s linear;
-    transition: all 0.08s linear;
-}
-.nav-sidebar .active a { 
-    cursor: default;
-    background-color: #34ca78; 
-    color: #fff; 
-}
-.nav-sidebar .active a:hover {
-    background-color: #37D980;   
-}
-.nav-sidebar .text-overflow a,
-.nav-sidebar .text-overflow .media-body {
-    white-space: nowrap;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis; 
-}
-
-.btn-blog {
-    color: #ffffff;
-    background-color: #37d980;
-    border-color: #37d980;
-    border-radius:0;
-    margin-bottom:10px
-}
-.btn-blog:hover,
-.btn-blog:focus,
-.btn-blog:active,
-.btn-blog.active,
-.open .dropdown-toggle.btn-blog {
-    color: white;
-    background-color:#34ca78;
-    border-color: #34ca78;
-}
- h2{color:#34ca78;}
- .margin10{margin-bottom:10px; margin-right:10px;}
-
-
-
-
-
-
-
-
-
 		</style>
 		<div class="container1 bg1">
-			<p class="logo">Impetus-X </p>
+			<p class="logo" style="color: black">Impetus-<span style="color: red">X</span></p>
 			<ul>
 			<li><a href="profile.php?logout='1'">Logout</a></li>
 			<li><a href="profile.php">Profile</a></li>
@@ -376,7 +307,7 @@ div.desc {
 
 				<?php 
 
-				$user_name = $_SESSION["user"]["email"];
+				$user_name = $_SESSION["user"]["user_name"];
 
 				$query = "SELECT * FROM post WHERE type='Technical'";
 				$results = mysqli_query($db, $query);

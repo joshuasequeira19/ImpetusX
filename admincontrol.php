@@ -312,7 +312,7 @@ div.desc {
 
 <body>
 <div class="container1 bg1">
-	<p class="logo">Impetus-X </p>
+	<p class="logo" style="color: black">Impetus-<span style="color: red">X</span></p>
 	<ul>
 		<li><a href="profile.php?logout='1'">Logout</a></li>
 		<li><a href="profile.php">Profile</a></li>
@@ -332,7 +332,7 @@ div.desc {
 				</div>
 	
 <div class="container2">
-<p class="name">Impetus-X</p>
+<p class="name">Impetus-<span style="color: black">X</span></p>
 </div>
 <div class="container3">
 <div>

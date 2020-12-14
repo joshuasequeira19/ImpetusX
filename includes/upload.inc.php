@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
-$user = $_SESSION["user"]["email"];
+$user = $_SESSION["user"]["user_name"];
 $post = $_POST["post"];
 $type = $_POST["type"];
 $title = $_POST["title"];

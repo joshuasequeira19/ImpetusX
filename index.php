@@ -223,13 +223,14 @@ div.desc {
 </div>
 	
 <div class="container2">
-<p class="name">Impetus-X</p>
+<p class="name">Impetus-<span style="color: black">X</span></p>
 </div>
 <div class="container3">
 <p class="hi">Categories</p>
+
 <div class="responsive">
   <div class="gallery">
-    <p><a  href="literature.php">
+    <p><a href="literature.php">
       <img src="l1.jpg" alt="books" width="260" height="250">
     </a></p>
     <div class="desc">Literature</div>
@@ -239,7 +240,7 @@ div.desc {
 
 <div class="responsive">
   <div class="gallery">
-    <p><a  href="art.php">
+    <p><a href="art.php">
       <img src="ar2.jpg" alt="Forest" width="260" height="250">
     </a></p>
     <div class="desc">Art</div>

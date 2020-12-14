@@ -22,7 +22,7 @@ body{
 }
 .form-box{		
 	width: 380px;
-	height: 500px;
+	height: 600px;
 	position: relative;
 	background: white;
 	padding: 6px;
@@ -86,7 +86,7 @@ li a:hover{
 	padding: 10px 25px;
 	cursor: pointer;
 	display: block;
-	margin: 10px 128px 10px;
+	margin: 10px 260px;
 	background: #B94549;
 	border: 0;
 	color:White;
@@ -103,7 +103,7 @@ li a:hover{
 	padding: 5px 30px;
 	cursor: pointer;
 	display: block;
-	margin: -48 270;
+	margin: 10px 100px;
 	border: 0;
 	padding: 9px 30px;
 	outline: none;
@@ -119,7 +119,7 @@ li a:hover{
 	padding: 5px 30px;
 	cursor: pointer;
 	display: block;
-	margin: 12 5;
+	margin: 10px 10px;
 	border: 0;
 	padding: 10px 30px;
 	outline: none;
@@ -214,7 +214,7 @@ li a:hover{
 <body>
 
 <div class="container1 bg1">
-	<p class="logo">Impetus-X </p>
+	<p class="logo" style="color: black">Impetus-<span style="color: red">X</span></p>
 	<ul>	
   <li><a href="profile.php?logout='1'">Logout</a></li>
   <li><a href="#news">Search</a></li>
@@ -234,13 +234,13 @@ li a:hover{
 					</div>
 				
 					<div class="box">
-						<p><!--a href=""-- add link to respective page-->
+						<p><a href="literature.php">
 						<img src="l1.jpg" class="image" id="gchild" >
 						</a></p>
 					</div>
 
 					<div class="box">
-						<p><!--a href=""><!-- add link to respective page-->
+						<p><a href="art.php">
 						<img src="ar2.jpg" class="image"  id="gchild">
 						</a></p>
 					</div>
@@ -249,9 +249,9 @@ li a:hover{
 <div class="form-box">
 	<form action="includes/upload.inc.php" method="post">
       <label class="label1" for="text">Start typing</label>
-      <br>
-      <input type="text" name="title">
-      <br>
+      <br><br>
+      <label>Title  </label><input type="text" name="title">
+      <br><br>
       <textarea  class="textbox" id="text" name="post" rows="12" cols="50"></textarea>
       <input type="hidden" value="">
       <br/>

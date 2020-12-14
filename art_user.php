@@ -9,7 +9,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Literature</title>
+		<title>Technical</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="blogtype.css">
 	</head>
@@ -281,19 +281,19 @@ div.desc {
 				<div class="logo-container" id="child">
 				
 				<div class="box">
-						<p><a href="technical.php"><!-- add link to respective page-->
+						<p><a href="technical_user.php"><!-- add link to respective page-->
 						<img src="t2.jpg" class="image"  id="gchild" >
 						</a></p>
 					</div>
 				
 					<div class="box">
-						<p><a href="literature.php"><!-- add link to respective page-->
+						<p><a href="literature_user.php"><!-- add link to respective page-->
 						<img src="l1.jpg" class="image" id="gchild" >
 						</a></p>
 					</div>
 
 					<div class="box">
-						<p><a href="art.php"><!-- add link to respective page-->
+						<p><a href="art_user.php"><!-- add link to respective page-->
 						<img src="ar2.jpg" class="image"  id="gchild">
 						</a></p>
 					</div>
@@ -304,18 +304,17 @@ div.desc {
 				
 			</div>
 			<div class="column post" style="background-color:#F7C3B1;" >
-				
 				<?php 
 
 				$user_name = $_SESSION["user"]["user_name"];
 
-				$query = "SELECT * FROM post WHERE type='Literature'";
+				$query = "SELECT * FROM post WHERE user_name='$user_name' AND type='Art'";
 				$results = mysqli_query($db, $query);
 				foreach ($results as $rows) {
 				?>
 
 <div class="col-md-10 blogShort">
-                     <h1><?=$rows['title']?> - <?=$rows['user_name']?></h1>
+                     <h1><?=$rows['title']?> </h1>
 
                      
 
@@ -330,7 +329,7 @@ div.desc {
 
 
 				<?php } ?>
-
+				
 			</div>
 		</div>
 	</body>

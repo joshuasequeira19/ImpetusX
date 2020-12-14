@@ -5,6 +5,9 @@
 		$_SESSION['msg']='Login to access';
 		header('location: login.php');
 	}
+
+	//$user_name = $_SESSION["user"]["user_name"];
+	// $email       =  e($_POST['email']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -197,7 +200,7 @@ li a:hover{
 </head>
 <body>
 <div class="container1 bg1">
-	<p class="logo">Impetus-X </p>
+	<p class="logo" style="color: black">Impetus-<span style="color: red">X</span></p>
 	<ul>	
   <li><a href="profile.php?logout='1'">Logout</a></li>
   <li><a href="upload.php">Upload</a></li>
@@ -217,10 +220,10 @@ li a:hover{
 		<p class="profile">Profile</p>
 		<img  class="profile_image" src="pr2.png" ></img>
 		<input type="text" class="input-field" id="uname" placeholder="user_name" name="user_name">
-		<input type="text" class="input-field" id="uname" placeholder="E-Mail" name="email" >
+		<input type="text" class="input-field" id="uname" placeholder="Email" name="email" >
 		<input type="text" class="input-field" id="about" placeholder="About" name="about" >
 		<br> <br>
-		<a href="#" class="btn btn1 btn-default btn-lg">
+		<a href="technical_user.php" class="btn btn1 btn-default btn-lg">
 		<span class="glyphicon glyphicon-search"></span> View post</a>
 		
 		<a href="#" class="btn btn2 btn-default btn-lg">
