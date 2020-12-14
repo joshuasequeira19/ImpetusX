@@ -216,7 +216,7 @@ li a:hover{
 	<form  id="Member" class="input-group">
 		<p class="profile">Profile</p>
 		<img  class="profile_image" src="pr2.png" ></img>
-		<input type="text" class="input-field" id="uname" placeholder="Username" name="username">
+		<input type="text" class="input-field" id="uname" placeholder="user_name" name="user_name">
 		<input type="text" class="input-field" id="uname" placeholder="E-Mail" name="email" >
 		<input type="text" class="input-field" id="about" placeholder="About" name="about" >
 		<br> <br>

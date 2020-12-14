@@ -228,7 +228,7 @@ li a:hover{
 				<div class="logo-container" id="child">
 				
 				<div class="box">
-						<p><!--a href=""!-- add link to respective page-->
+						<p><a href="technical.php">
 						<img src="t2.jpg" class="image"  id="gchild" >
 						</a></p>
 					</div>
@@ -247,11 +247,22 @@ li a:hover{
 				
 				</div>
 <div class="form-box">
-	<form action="/form/submit" method="post">
+	<form action="includes/upload.inc.php" method="post">
       <label class="label1" for="text">Start typing</label>
       <br>
-      <textarea  class="textbox" id="text" name="text" rows="12" cols="50"></textarea>
+      <input type="text" name="title">
+      <br>
+      <textarea  class="textbox" id="text" name="post" rows="12" cols="50"></textarea>
+      <input type="hidden" value="">
       <br/>
+      <label for="type">Choose the section you want the post to be uploaded to:</label>
+
+<select name="type" id="type">
+  <option value="Literature">Literature</option>
+  <option value="Technical">Technical</option>
+  <option value="Art">Art</option>
+</select>
+<br>
 
       <input class="submit-btn" type="submit" value="Submit">
 	  <input class="button1" type="submit" value="Delete">

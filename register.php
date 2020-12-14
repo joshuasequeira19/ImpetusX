@@ -238,12 +238,13 @@ span{
 		
 		<div>
 			
-			<input type="text" class="input-field" name="username" placeholder="User Name" value="<?php echo $username;?>">
+			<input type="text" class="input-field" name="user_name" placeholder="User Name" value="<?php echo $user_name;?>" pattern="[A-Za-z]{3,15}" title="Enter Valid name" required>
 		
-			<input type="email" class="input-field" name="email"  placeholder="E-Mail" value="<?php echo $email;?>">
-			<input type="password" class="input-field"  placeholder="Password" id="password_1" name="password_1">
+			<input type="email" class="input-field" name="email"  placeholder="E-Mail" value="<?php echo $email;?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+			<input type="password" id="pass" class="input-field"  placeholder="Password" id="password_1" name="password_1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 		
-			<input type="passsword" class="input-field"  placeholder=" Confirm Password" id="password_2" name="password_2">
+			<input type="password" id="cpass" class="input-field"  placeholder=" Confirm Password" id="password_2" name="password_2" required>
 	
 			<button type="submit" form="register"  class="submit-btn" name='register_btn'>Register</button>
 			<span class="f1">Already a member?</span>
@@ -261,6 +262,24 @@ span{
 	</aside>
 
 	</div>
+
+	<script>
+		var password = document.getElementById("pass"),
+			confirm_password = document.getElementById("cpass");
+
+		function validatePassword() {
+			if (password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Passwords Don't Match");
+			} else {
+				confirm_password.setCustomValidity('');
+			}
+		}
+
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+
+	</script>
+
 	</body>
 	
 <html>

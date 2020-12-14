@@ -234,7 +234,7 @@ span{
 			<?php echo display_error(); ?>
 			
 			
-				<input type="text" name="username" class="input-field" placeholder="User Name" value="<?php echo $username;?>">
+				<input type="text" name="user_name" class="input-field" placeholder="User Name" value="<?php echo $user_name;?>">
 				<input type="password" name="password_1" class="input-field" placeholder="Password">
 			
 			<button  class="submit-btn" type="submit" form="login" name="login_btn">Login</button>		

@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', 'root', 'project');
+$db = mysqli_connect('localhost', 'root', '', 'multi_login');
 
 if (mysqli_connect_errno()) {
   echo "Failed to connect to server " . mysqli_connect_error();
@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 
 
 // variable declaration
-$username = "";
+$user_name = "";
 $email    = "";
 $errors   = array(); 
 
@@ -23,18 +23,18 @@ if (isset($_POST['register_btn'])) {
 // REGISTER USER
 function register(){
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $username, $email;
+	global $db, $errors, $user_name, $email;
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
-	$username    =  e($_POST['username']);
+	$user_name    =  e($_POST['user_name']);
 	$email       =  e($_POST['email']);
 	$password_1  =  e($_POST['password_1']);
 	$password_2  =  e($_POST['password_2']);
 
 	// form validation: ensure that the form is correctly filled
-	if (empty($username)) { 
-		array_push($errors, "Username is required"); 
+	if (empty($user_name)) { 
+		array_push($errors, "user_name is required"); 
 	}
 	if (empty($email)) { 
 		array_push($errors, "Email is required"); 
@@ -53,15 +53,15 @@ function register(){
 		if (isset($_POST['user_type'])) {
 			$user_type = e($_POST['user_type']);
 			$query = "INSERT INTO users (user_name, email, user_type, password) 
-					  VALUES('$username', '$email', '$user_type', '$password');";
+					  VALUES('$user_name', '$email', '$user_type', '$password');";
 			$query .="INSERT INTO friends 
-					  values('$username');";
+					  values('$user_name');";
 			mysqli_multi_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: index.php');
 		}else{
 			$query = "INSERT INTO users (user_name, email, user_type, password) 
-					  VALUES('$username', '$email', 'user', '$password')";
+					  VALUES('$user_name', '$email', 'user', '$password')";
 			mysqli_query($db, $query);
 
 			// get id of the created user
@@ -125,15 +125,15 @@ if (isset($_POST['login_btn'])) {
 
 // LOGIN USER
 function login(){
-	global $db, $username, $errors;
+	global $db, $user_name, $errors;
 
 	// grap form values
-	$username = e($_POST['username']);
+	$user_name = e($_POST['user_name']);
 	$password = e($_POST['password_1']);
 
 	// make sure form is filled properly
-	if (empty($username)) {
-		array_push($errors, "Username is required");
+	if (empty($user_name)) {
+		array_push($errors, "user_name is required");
 	}
 	if (empty($password)) {
 		array_push($errors, "Password is required");
@@ -143,8 +143,10 @@ function login(){
 	if (count($errors) == 0) {
 		$password = md5($password);
 
-		$query = "SELECT * FROM users WHERE user_name='$username' AND password='$password' LIMIT 1";
+		$query = "SELECT * FROM users WHERE user_name='$user_name' AND password='$password' LIMIT 1";
 		$results = mysqli_query($db, $query);
+
+		if($results!=false){
 
 		if (mysqli_num_rows($results) == 1) { // user found
 			// check if user is admin or user
@@ -161,8 +163,9 @@ function login(){
 				header('location: index.php');
 			}
 		}else {
-			array_push($errors, "Wrong username/password combination");
+			array_push($errors, "Wrong user_name/password combination");
 		}
+	}
 	}
 }
 
