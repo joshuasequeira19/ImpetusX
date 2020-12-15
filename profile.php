@@ -6,8 +6,13 @@
 		header('location: login.php');
 	}
 
-	//$user_name = $_SESSION["user"]["user_name"];
-	// $email       =  e($_POST['email']);
+				$user_name = $_SESSION["user"]["user_name"];
+
+				$query = "SELECT * FROM users WHERE user_name='$user_name'";
+				$results = mysqli_query($db, $query);
+				foreach ($results as $rows) {
+					$bio = $rows['bio'];
+				}
 ?>
 <!DOCTYPE html>
 <html>
@@ -216,18 +221,20 @@ li a:hover{
 						
 		</div>
 <div class="form-box">
-	<form  id="Member" class="input-group">
+	<form action="includes/profile.inc.php" method="post" id="Member" class="input-group">
 		<p class="profile">Profile</p>
 		<img  class="profile_image" src="pr2.png" ></img>
-		<input type="text" class="input-field" id="uname" placeholder="user_name" name="user_name">
-		<input type="text" class="input-field" id="uname" placeholder="Email" name="email" >
-		<input type="text" class="input-field" id="about" placeholder="About" name="about" >
+		<input type="text" disabled class="input-field" id="uname" value="<?=$_SESSION["user"]["user_name"]?>" placeholder="user_name" name="user_name">
+		<input type="text" class="input-field" id="uname" value="<?=$_SESSION["user"]["email"]?>" placeholder="Email" name="email" >
+		<input type="text" class="input-field" id="about" value="<?=$bio?>" placeholder="About" name="bio" >
 		<br> <br>
-		<a href="technical_user.php" class="btn btn1 btn-default btn-lg">
-		<span class="glyphicon glyphicon-search"></span> View post</a>
+
+
+		 <button type="submit" href="technical_user.php" class="btn btn1 btn-default btn-lg">
+		<img class="iedit" src="pencil.png" > Update Info</button>
 		
 		<a href="#" class="btn btn2 btn-default btn-lg">
-		<span class="iedit"><img class="iedit" src="pencil.png"</span> Edit Info</a>
+		<span class="iedit">  <span class="glyphicon glyphicon-search"></span>  </span>View post</a>
 	</form>
 </div>
 
