@@ -86,7 +86,7 @@ li a:hover{
 	padding: 10px 25px;
 	cursor: pointer;
 	display: block;
-	margin: 10px 260px;
+	margin: 5px 260px;
 	background: #B94549;
 	border: 0;
 	color:White;
@@ -99,11 +99,11 @@ li a:hover{
 }
 
 .button1{
-	width: 25%;
+	width: 28%;
 	padding: 5px 30px;
 	cursor: pointer;
 	display: block;
-	margin: 10px 100px;
+	margin: -40px 100px;
 	border: 0;
 	padding: 9px 30px;
 	outline: none;
@@ -119,7 +119,7 @@ li a:hover{
 	padding: 5px 30px;
 	cursor: pointer;
 	display: block;
-	margin: 10px 10px;
+	margin: -30px 5px;
 	border: 0;
 	padding: 10px 30px;
 	outline: none;
@@ -265,8 +265,8 @@ li a:hover{
 <br>
 
       <input class="submit-btn" type="submit" value="Submit">
-	  <input class="button1" type="submit" value="Delete">
-      <input class="button" type="submit" value="View">
+	  <input class="button1" value="Delete" disabled>
+      <input class="button" value="View" disabled>
 
     </form>
 </div>

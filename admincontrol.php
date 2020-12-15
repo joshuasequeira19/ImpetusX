@@ -17,6 +17,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><html>
 <head>
 <title> Home Page</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+
+
 </head>
 <style>
 	.container1{
@@ -311,6 +322,25 @@ div.desc {
 </style>
 
 <body>
+	<?php 
+
+	if (isset($_GET['info']))
+	if (($_GET['info']) === 'del') {
+                            echo '<div class="alert-box-container">
+											<div class="alert-box rounded p-2" style="box-shadow: 0px 5px 20px 0px #555; background: #218838; color:white;">
+												<div class="row">
+													<div class="col-4"></div>
+													<div class="col-4"><center>User Deleted Successfully!</center></div>
+													<div class="col-1 cross" style="padding-left:0"></div>
+												</div>
+											</div>
+											<br>
+										</div>';
+									}
+
+
+
+	?>
 <div class="container1 bg1">
 	<p class="logo" style="color: black">Impetus-<span style="color: red">X</span></p>
 	<ul>
@@ -326,8 +356,7 @@ div.desc {
 				
 				
 				<div class="box">
-				<button type="button" class="button"> Display Users</button>		
-				<button type="button1" class="button1"> Delete Users</button>		
+					
 				</div>				
 				</div>
 	
@@ -336,17 +365,98 @@ div.desc {
 </div>
 <div class="container3">
 <div>
-<div id="overflowTest"></div>
-<button type="button" class="btn1"> Display Users</button>		
-				<button type="btn2" class="btn2"> Delete Users</button>		
+<div id="overflowTest">
+	
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+<?php 
+
+				$user_name = $_SESSION["user"]["user_name"];
+
+				$query = "SELECT * FROM users";
+				$results = mysqli_query($db, $query);
+				foreach ($results as $rows) {
+				?>
+            <tr>
+                <td><center><?=$rows['id']?></center></td>
+                <td><center><?=$rows['user_name']?></center></td>
+                <td><center><?=$rows['email']?></center></td>
+                <td><center><a href="includes/delete.inc.php?id=<?=$rows['id']?>"><button type="button"> Delete User</button></a></center></td>
+
+            </tr>
+
+				<?php } ?>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+</div>
+	
 </div>
 </div>
 
 
 
-<div class="clearfix"></div>
+<div class="clearfix">
+	
+
+
+
+
+
+</div>
 </div>
 <footer class="container4">
 <p class="footer">@impetus-X2020</p>
+</footer>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<script>
+        $(document).ready(function() {
+            window.setTimeout(function() {
+                $(".alert-box-container").slideUp(500, function() {
+                    $(this).remove();
+                });
+            }, 5000);
+        });
+
+        $(document).ready(function() {
+            $(".cross").click(function() {
+
+                $(".alert-box-container").slideUp(500, function() {
+                    $(this).remove();
+                });
+            });
+        });
+
+    </script>
+
+</body>
  
 </html>

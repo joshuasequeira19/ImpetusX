@@ -233,7 +233,7 @@ li a:hover{
 		 <button type="submit" href="technical_user.php" class="btn btn1 btn-default btn-lg">
 		<img class="iedit" src="pencil.png" > Update Info</button>
 		
-		<a href="#" class="btn btn2 btn-default btn-lg">
+		<a href="technical_user.php" class="btn btn2 btn-default btn-lg">
 		<span class="iedit">  <span class="glyphicon glyphicon-search"></span>  </span>View post</a>
 	</form>
 </div>
